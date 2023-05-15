@@ -26,12 +26,12 @@ class Book extends Model implements HasMedia
     public function registerMediaConversions(Media $media = null): void {
         $this->addMediaConversion('thumb')
             ->performOnCollections('book_cover')
-            ->crop('crop-center', 60, 60)
+            ->crop('crop-center', 40, 60)
             ->nonQueued();
 
         $this->addMediaConversion('larger')
             ->performOnCollections('book_cover')
-            ->crop('crop-center', 600, 600)
+            ->crop('crop-center', 400, 600)
             ->nonQueued();
     }
 
