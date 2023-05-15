@@ -53,7 +53,8 @@ class BookResource extends Resource
 
                                 TextInput::make('author')
                                     ->label(__('library::index.filament.form.author.label'))
-                                    ->datalist(fn(Book $record) => $record::all()->pluck('author', 'author')),
+                                    ->datalist(Book::all()->pluck('author', 'id'))
+                                ,
 
                                 //TextInput::make('author')
                                 //    ->label(__('library::index.filament.form.author.label')),
@@ -95,11 +96,11 @@ class BookResource extends Resource
 
                         TextInput::make('publisher')
                             ->label(__('library::index.filament.form.publisher.label'))
-                            ->datalist(fn(Book $record) => $record::all()->pluck('publisher', 'publisher')),
+                            ->datalist(Book::all()->pluck('publisher', 'publisher')),
 
                         TextInput::make('genre')
                             ->label(__('library::index.filament.form.genre.label'))
-                            ->datalist(fn(Book $record) => $record::all()->pluck('genre', 'genre')),
+                            ->datalist(Book::all()->pluck('genre', 'genre')),
 
 
                     ])
